@@ -1,3 +1,4 @@
+import decimal
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
@@ -61,4 +62,15 @@ class Utils:
                 break
                 
         raise Exception("Could not build CSS selector")
+    
+    
+    @staticmethod
+    def TryParse(parseString  : str, parseType : type):
+        try:
+            if parseType == int and '.' in parseString:
+                return int(float(parseString))
+            value = parseType(parseString)
+            return value
+        except Exception:
+            return None
                     
