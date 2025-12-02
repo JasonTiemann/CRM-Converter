@@ -337,7 +337,7 @@ class EZVetDownloader:
             theraputicProcedure.time = parsedTime
             theraputicProcedure.name = columns[1].text.strip()
             theraputicProcedure.specifics = columns[2].text.strip()
-            if (len(theraputicProcedure.name) > 0):
+            if theraputicProcedure.HasAnyInfo():
                 appointment.theraputicProcedures.append(theraputicProcedure)
             
         

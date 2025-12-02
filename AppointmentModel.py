@@ -87,6 +87,11 @@ class TheraputicProcedureModel:
         self.time : time = None
         self.name = None
         self.specifics = None
+    def HasAnyInfo(self):
+        return (
+            self.name is not None or
+            self.specifics is not None
+        )
         
 class DiagnosticResultModel:
     def __init__(self):
